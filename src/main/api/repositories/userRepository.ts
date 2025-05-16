@@ -49,6 +49,17 @@ const userRepository = {
     await userCollection.deleteOne({ id: parseInt(userId) });
     return user;
   },
+
+  deleteAllUsers: async () => {
+    const db = await getDatabase();
+    const userCollection = db.collection("users");
+    const postCollection = db.collection("posts");
+    const commentCollection = db.collection("comments");
+
+    await userCollection.deleteMany({});
+    await postCollection.deleteMany({});
+    await commentCollection.deleteMany({});
+  },
 };
 
 export default userRepository;

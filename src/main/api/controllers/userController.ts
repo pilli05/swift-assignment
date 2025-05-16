@@ -62,6 +62,20 @@ const userController = {
       });
     }
   },
+
+  deleteAllUsers: async (req: any, res: any) => {
+    try {
+      await userRepository.deleteAllUsers();
+      res.status(200).send({
+        message: "All users deleted successfully",
+      });
+    } catch (error) {
+      res.status(500).send({
+        message: "Internal server error",
+        error: error,
+      });
+    }
+  },
 };
 
 export default userController;
