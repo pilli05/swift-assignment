@@ -5,7 +5,7 @@
   "main": "app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec npx tsx src/main/app.ts"
+    "start": "ts-node src/main/app.ts"
   },
   "author": "",
   "license": "ISC",
